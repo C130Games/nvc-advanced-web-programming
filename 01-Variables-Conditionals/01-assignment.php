@@ -62,7 +62,7 @@
     
 <?php
 
-    $date1 = new DateTime("2018-01-28"); //can't figure out how to use current date with DateTime function
+    $date1 = date("Y-m-d"); //can't figure out how to use current date with DateTime function
     $date2 = new DateTime("2018-04-27");
     $diff = $date2->diff($date1)->format("%a");
     
