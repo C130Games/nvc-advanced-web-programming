@@ -38,6 +38,8 @@
 <br/>
     
 <!--03. Create and use a boolean variable-->
+    
+    $
 
 <?php
     $Birthday = date('04/27');
@@ -49,11 +51,15 @@
     
     // Comparing Boolean variables then echoing based on true or false
     if ($Birthday == $currentDate){
-        echo "Today is my birthday!";
+        echo "Today is my birthday!<br/>";
+        $BirthdayToday = TRUE;
     }
     else{
-        echo "Today Isn't my birthday!";
+        echo "Today Isn't my birthday!<br/>";
+        $BirthdayToday = FALSE;
     }
+    
+    echo true === (bool)$BirthdayToday ? 'True' : 'False';
 ?>
     
 <br/>
@@ -62,7 +68,7 @@
     
 <?php
 
-    $date1 = date("Y-m-d"); //can't figure out how to use current date with DateTime function
+    $date1 = new DateTime();
     $date2 = new DateTime("2018-04-27");
     $diff = $date2->diff($date1)->format("%a");
     
@@ -70,13 +76,19 @@
 ?>
     
 <br/>
+<br/>
     
 <?php
+    
+    function convertDate() {
     $now = time(); // or your date as well
-    $birthdayDate = strtotime("2018-04-27");
-    $datediff = $birthdayDate - $now;
+    $your_date = strtotime("2021-01-20");
+    $datediff = $your_date - $now;
+    $roundedDate = round($datediff / (60 * 60 * 24));
+    return $roundedDate;
+    }
 
-    echo round($datediff / (60 * 60 * 24)) . " days until my birthday.";
+    echo convertDate() . " Days left of Trump!";
 ?>
 
 <br/>
